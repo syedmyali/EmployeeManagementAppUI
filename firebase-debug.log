@@ -1,0 +1,64 @@
+[debug] [2023-05-26T16:17:29.194Z] ----------------------------------------------------------------------
+[debug] [2023-05-26T16:17:29.197Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-05-26T16:17:29.198Z] CLI Version:   12.2.1
+[debug] [2023-05-26T16:17:29.199Z] Platform:      win32
+[debug] [2023-05-26T16:17:29.199Z] Node Version:  v18.14.0
+[debug] [2023-05-26T16:17:29.201Z] Time:          Fri May 26 2023 17:17:29 GMT+0100 (British Summer Time)
+[debug] [2023-05-26T16:17:29.201Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-26T16:17:29.217Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-26T16:17:29.218Z] > authorizing via signed-in user (syounusa@googlemail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\User\OneDrive\Documents\AngularProjects\employeecrud
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-05-26T16:17:41.778Z] > refreshing access token with scopes: []
+[debug] [2023-05-26T16:17:41.788Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-26T16:17:41.788Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-26T16:17:41.956Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-05-26T16:17:41.956Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-26T16:17:41.961Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-05-26T16:17:42.018Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:144:12)
+    at refreshTokens (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:508:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.getAccessToken (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:149:23)
+    at async Client.addAuthHeader (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:140:21)
+    at async Client.request (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:34)
+    at async getProjectPage (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:238:17)
+    at async getFirebaseProjectPage (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:255:23)
+    at async selectProjectInteractively (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:94:41)
+    at async doSetup (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\project.js:88:27)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
+[debug] [2023-05-26T16:17:42.334Z] Error: EPERM: operation not permitted, open 'C:\Users\User\.config\configstore\firebase-tools.json.87880242'
+    at Object.openSync (node:fs:600:3)
+    at Function.writeFileSync [as sync] (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\write-file-atomic\index.js:205:13)
+    at set all [as all] (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\configstore\index.js:61:20)
+    at Configstore.set (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\configstore\index.js:91:12)
+    at process.<anonymous> (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js:102:35)
+    at process.emit (node:events:525:35)
+    at process.processEmit [as emit] (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\signal-exit\index.js:191:37)
+    at process.exit (node:internal/process/per_thread:192:15)
+    at Timeout._onTimeout (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\errorOut.js:20:17)
+    at listOnTimeout (node:internal/timers:569:17)
+[error] 
+[error] Error: An unexpected error has occurred.
