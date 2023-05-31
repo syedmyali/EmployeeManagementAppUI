@@ -6,8 +6,7 @@
     <!-- <h4 class="mb-3"> Employee List</h4> -->
    
     <button routerLink="/create-employee"  class ="btn btn-success mb-3">Add Employee</button>
-    <div style="display: flex;" class="mb-2">
-        
+    <!-- <div style="display: flex;" class="mb-2">
         <span class="me-1">Display Entities</span>
         <select (change)="onTableSizeChange($event)">
             <option *ngFor="let size of tableSizes">
@@ -15,48 +14,56 @@
             </option>
         </select>
         <span class="ms-3">Search Entities</span>
-        <input style="width: 25%; " class="form-control text-start ms-2" 
-        type="text" name="search" [(ngModel)]="searchText" 
-        placeholder="Search by name and email" >  
-    </div>
-    
-<table class = "table table-striped col-sm-12">   
+        <input style="width: 25%; " class="form-control text-start ms-2" type="text" name="search" [(ngModel)]="searchText"
+            placeholder="Search by name and email">
+    </div> -->
+<div class="table-responsive"></div>
+<table  class = "table table-striped col-sm-12" datatable [dtOptions]="dtoptions" [dtTrigger]="dttrigger" >   
     <thead>
         <tr class="text-bg-primary">
-            <th>Employee First Name</th>
-            <th>Employee Last Name </th>
-            <th>Employee Email Id</th>
-            <th>Employee Phone No</th>
-            <th> Department</th>
-            <th class="text-start"> Actions </th>
+            <th>First Name</th>
+            <th>Last Name </th>
+            <th>Email Id</th>
+            <th>Phone No</th>
+            <th>Department</th>
+            <th  class="text-start"> Actions </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let employee of employees |filter:searchText | paginate:{
-            itemsPerPage: tableSize,
-            currentPage: page,
-            totalItems:  count}; let i = index " >
+        <tr *ngFor = "let employee of employees " >
             <td> {{ employee.firstName }} </td>
             <td> {{ employee.lastName }} </td>
             <td> {{ employee.emailId }} </td>
             <td> {{ employee.phoneNo }} </td>
             <td> {{ employee.department }} </td>
-            <td class="text-start">
+            <td style="display: flex;" class="text-start">
                 <button (click) = "updateEmployee(employee.id)" class = "btn btn-info"> Update</button>
-                <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-                <button (click) = "employeeDetails(employee.id)" class = "btn btn-success" style="margin-left: 10px"> View</button>
+                <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left: 5px"> Delete</button>
+                <button (click) = "employeeDetails(employee.id)" class = "btn btn-success" style="margin-left: 5px"> View</button>
             </td>
         </tr>
     </tbody>
 </table>
 
-<div class="col-sm-12 text-center">
+
+<!-- <div class="col-sm-12 text-center">
     <pagination-controls
     previousLabel="Prev"
     nextLabel="Next"
     (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div> -->
 </div>
-</div>
+
+<br><br>
+
+
+
+<!-- 
+    Manual pagination, search options:- 
+    |filter:searchText | paginate:{
+    itemsPerPage: tableSize,
+    currentPage: page,
+    totalItems:  count}; let i = index -->
 
 
 

@@ -12,11 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FilterPipeModule } from 'ngx-filter-pipe';
-
-
-
-
-
+import {DataTablesModule} from 'angular-datatables';
 
 
 @NgModule({
@@ -35,6 +31,7 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
     NgxPaginationModule,
     Ng2SearchPipeModule,
     FilterPipeModule,
+    DataTablesModule
    
   ],
   providers: [],
